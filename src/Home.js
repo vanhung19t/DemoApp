@@ -16,7 +16,7 @@ const Home=({navigation,route})=>{
           </View> */}
           {/*body*/}
           <View style={{justifyContent:'center'}}>
-            <Text style={{fontSize:20}}>Thông tin đăng nhập của bạn</Text>
+            <Text style={{fontSize:20}}>Thông tin đăng nhập của bạn là</Text>
             <Text style={{fontSize:20}}>Email: {email}</Text>
             <Text style={{fontSize:20}}>Password: {password}</Text>
           </View>
