@@ -9,7 +9,7 @@ const Calculator = ()=>{
     const bgColorNumber = (darkMode)? "#303946":"#fff";
     const bgColorResult = (darkMode)? "#282f3b": "#f5f5f5";
     const bgColorThemeButton = (darkMode)? "#7b8084": "#e5e5e5";
-    const textcolorHistory =(darkMode)?"#B5B7BB":"7C7C7e";
+    const textcolorHistory =(darkMode)?"#B5B7BB":"#7C7C7e";
     const colorIcon = (darkMode)? "white": "black"
     //Buttons
     const buttonsleft = [
@@ -34,10 +34,36 @@ const Calculator = ()=>{
             setCurrentNumber(result)
         }
     }
+    const handleInput=(buttonPress)=>{
+        switch(buttonPress){
+            case "+":case "-":case "*":case "/":
+                Vibration.vibrate(35);
+                setCurrentNumber(currentNumber+buttonPress);
+                break;
+            case "DEL":
+                Vibration.vibrate(35);
+                setCurrentNumber(currentNumber.substring(0,(currentNumber.length-1)));
+                break;
+            case "C":
+                Vibration.vibrate(35);
+                setCurrentNumber("")
+                setLastNumber("")
+                break;
+            case "=":
+                Vibration.vibrate(35);
+                setLastNumber(currentNumber+"=")
+                calculator()
+                break
+            default:
+                Vibration.vibrate(35)
+                setCurrentNumber(currentNumber+buttonPress)
+                break
+        }
+    }
     //Render GUI
     return(
         <View style={styles.container}>
-            <View style={styles.containerResult}>
+            <View style={{...styles.containerResult,backgroundColor:bgColorResult}}>
                 <TouchableOpacity
                 style={{...styles.themeButton,backgroundColor:bgColorThemeButton}}
                 onPress={()=>{setDarkMode(!darkMode)}}

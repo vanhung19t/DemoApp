@@ -25,6 +25,7 @@ import Project5 from './src/Lab1/Project5';
 import Project6 from './src/Lab1/Project6';
 import Project7 from './src/Lab1/Project7';
 import Project8 from './src/Lab1/Project8';
+import Calculator from './src/Lab1/Calculator';
 
 export default function App(){
     return(
@@ -37,8 +38,7 @@ export default function App(){
     // <PaperProvider >
     //   <DemoAppbar/>
     // </PaperProvider>
-    // <Project1/>
-    <Project8/>
+    <Calculator/>
     )
    
 } 
