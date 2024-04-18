@@ -5,7 +5,7 @@ import ContactListItem from './ContactListItem';
 
 const keyExtractor = (item) => item.phone;
 
-const Contacts = () => {
+const Contacts = ({navigation}) => {
   // State
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
