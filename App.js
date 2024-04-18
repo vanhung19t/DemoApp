@@ -26,7 +26,10 @@ import Project6 from './src/Lab1/Project6';
 import Project7 from './src/Lab1/Project7';
 import Project8 from './src/Lab1/Project8';
 import Calculator from './src/Lab1/Calculator';
-
+import Contacts from './src/Lab2/components/Contacts';
+import Routes  from './src/Lab2/components/Routes';
+import Store from './src/Lab2/components/Store';
+import { Provider } from 'react-redux';
 export default function App(){
     return(
     //   <NavigationContainer>
@@ -38,7 +41,8 @@ export default function App(){
     // <PaperProvider >
     //   <DemoAppbar/>
     // </PaperProvider>
-    <Calculator/>
+   <Routes/>
+
     )
    
 } 
